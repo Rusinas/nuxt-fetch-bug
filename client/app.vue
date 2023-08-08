@@ -4,13 +4,7 @@
   </div>
 </template>
 
-
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  async setup() {
-    const data = await $fetch('http://localhost:4000/')
-  },
-})
+<script lang="ts" setup>
+const data = await $fetch("http://localhost:4000/", { method: "GET", mode: "cors" })
+console.log({ data })
 </script>
